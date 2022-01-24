@@ -1,0 +1,20 @@
+{% extends 'apps/lei.html' %}
+{% block title %} News the site {% endblock %}
+{% block content %}
+    <div class="features">
+        <h1>{{ title }}</h1>
+        <p>News the site</p>
+        <button class="btn btn-warning">{% filter upper %}To the page about us{% endfilter %}</button>
+        {% for el in values %}
+            {% if el == 'Hello' %}
+                {% filter lower %}
+                    <p>{{ el }}</p>
+                {% endfilter %}
+            {% endif  %}
+        {% endfor %}
+        {% for el in obj %}
+            <p>{{ el }}</p>
+        {% endfor %}
+        {{news}}
+    </div>
+{% endblock %}
